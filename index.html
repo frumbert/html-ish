@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HTML-ish templating</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h1>Hmm, tabs and accordions and evenly spaced columns use wayy too much markup</h1>
+        <h3>and aren't too friendly for novice html coders...</h3>
+        <p>Yes, I think about this sort of thing. Check out the page below, the view its source and see if your eyebrows don't move. Bet they do.</p>
+        <p>HandlebarsJS is used to do some of the heavy lifting, but the tech is in the plain old javascript. Did you you could do this with tags?</p>
+
+        <accordion>
+
+            <tabbed interface demo *>
+                <tabs interesting>
+                    <first tab>
+                        <p>Tellus adipiscing tempus adipiscing ligula sit volutpat quam a nam nunc netus parturient cras scelerisque tempor mus neque.Ut ac risus nam a arcu ullamcorper natoque convallis tristique pretium ut congue a egestas ad suspendisse aenean sapien nulla vel tincidunt tincidunt ut.</p>
+                    </first>
+                    <the second tab>
+                        <p>Nec suspendisse vel a bibendum pretium non elit ac sem nec elit facilisis integer condimentum ullamcorper penatibus.Parturient quis elit maecenas malesuada id vulputate nulla fusce fames consectetur cursus condimentum a ad suspendisse ac interdum semper a a a.Morbi penatibus faucibus nascetur.</p>
+                    </the>
+                    <and finally the last tab *>
+                        <p>Et maecenas orci dui elementum quam vestibulum dictumst ultricies nascetur posuere ultricies curabitur imperdiet congue mus a tempor euismod ullamcorper eu montes parturient tortor volutpat.Suspendisse duis sem a purus mus at facilisi massa a condimentum massa magnis sagittis adipiscing orci adipiscing vestibulum non vel ad dis est vestibulum suspendisse magna scelerisque.Donec felis vestibulum mollis senectus eros facilisis malesuada.</p>
+                    </and>
+                </tabs>
+            </tabbed interface demo>
+
+            <even columns>
+            <cols>
+                <x><p>Tellus adipiscing tempus adipiscing ligula sit volutpat quam a nam nunc netus parturient cras scelerisque tempor mus neque.Ut ac risus nam a arcu ullamcorper natoque convallis tristique pretium ut congue a egestas ad suspendisse aenean sapien nulla vel tincidunt tincidunt ut.</p></x>
+                <y><p>Nec suspendisse vel a bibendum pretium non elit ac sem nec elit facilisis integer condimentum ullamcorper penatibus.Parturient quis elit maecenas malesuada id vulputate nulla fusce fames consectetur cursus condimentum a ad suspendisse ac interdum semper a a a.Morbi penatibus faucibus nascetur.</p></y>
+                <z><p>Et maecenas orci dui elementum quam vestibulum dictumst ultricies nascetur posuere ultricies curabitur imperdiet congue mus a tempor euismod ullamcorper eu montes parturient tortor volutpat.Suspendisse duis sem a purus mus at facilisi massa a condimentum massa magnis sagittis adipiscing orci adipiscing vestibulum non vel ad dis est vestibulum suspendisse magna scelerisque.Donec felis vestibulum mollis senectus eros facilisis malesuada.</p></z>
+            </cols>
+            </even columns demo>
+
+            <uneven columns>
+            <cols>
+                <a 3-4><p>Tellus adipiscing tempus adipiscing ligula sit volutpat quam a nam nunc netus parturient cras scelerisque tempor mus neque.Ut ac risus nam a arcu ullamcorper natoque convallis tristique pretium ut congue a egestas ad suspendisse aenean sapien nulla vel tincidunt tincidunt ut.</p></a>
+                <b 1-4><p>Nec suspendisse vel a bibendum pretium non elit ac sem nec elit facilisis integer condimentum ullamcorper penatibus.Parturient quis elit maecenas malesuada id vulputate nulla fusce fames consectetur cursus condimentum a ad suspendisse ac interdum semper a a a.Morbi penatibus faucibus nascetur.</p></b>
+            </cols>
+            </uneven columns>
+
+            <documentation>
+                <h2>Tabs</h2>
+                <p>Use the "tabs" psuedo-tag. Your tags are the tab labels, and what's in the tags become the tab body for that tab. Add a * to the end of an item to make it selected by default.
+                <code>
+    &lt;tabs&gt;
+        &lt;the text of the first tab&gt;
+            first item
+        &lt;/the&gt;
+        &lt;more text *&gt;
+            middle item, this tab is selected by default since it ends with *
+        &lt;/more&gt;
+        &lt;and finally&gt;
+            last item
+        &lt;/and&gt;
+    &lt;/tabs&gt;
+                </code>
+
+                <h2>Columns</h2>
+                <p>Use the "cols" psuedo-tag. I'm using <a href="http://css-tricks.com/dont-overthink-it-grids/">Don't Overthink It Grids</a>. The sub items can have a parameter specifying the column span. I haven't build all the possible styles for this, but it's easy to do. Your columns get evenly distributed unless you specify a specific size. View the page source to check that out.</p>
+                <code>
+    &lt;cols&gt;
+        &lt;c&gt;Your column 1 goes in here, the wrapping tag itself doesn't matter and is discarded&lt;/c&gt;
+        &lt;c&gt;Your column 2 content goes in here&lt;/c&gt;
+        &lt;d&gt;Your column 3 content goes in here&lt;/d&gt;
+    &lt;/cols&gt;
+                </code>
+
+                <h2>Accordions</h2>
+                <p>Use the "accordion" psuedo-tag. The tags become the headings, and what's in the tags become the bodies for that heading...</p>
+                <code>
+    &lt;accordion&gt;
+        &lt;the text of the first item&gt;
+            first item
+        &lt;/the&gt;
+        &lt;more items *&gt;
+            middle item, this item is open by default since it ends with *
+        &lt;/more&gt;
+        &lt;and finally&gt;
+            last item
+        &lt;/and&gt;
+    &lt;/accordion&gt;
+                </code>
+
+                <p>Feel free to scream about now.</p>
+
+            </documentation>
+
+        </accordion>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
+    <script type="text/javascript">
+    Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
+    var operators, result;
+    if (arguments.length < 3) {
+        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+    }
+    if (options === undefined) {
+        options = rvalue;
+        rvalue = operator;
+        operator = "===";
+    }
+    operators = {
+        '==': function (l, r) { return l == r; },
+        '===': function (l, r) { return l === r; },
+        '!=': function (l, r) { return l != r; },
+        '!==': function (l, r) { return l !== r; },
+        '<': function (l, r) { return l < r; },
+        '>': function (l, r) { return l > r; },
+        '<=': function (l, r) { return l <= r; },
+        '>=': function (l, r) { return l >= r; },
+        '~': function (l, r) { return (r&&l&&r.toString().indexOf(l.toString()) != -1); },
+        '!~': function (l, r) { return (r&&l&&r.toString().indexOf(l.toString()) == -1); },
+        'typeof': function (l, r) { return typeof l == r; },
+        'is': function (l, r) {
+            if (r === 'empty') { // returns true IF empty
+                return ((typeof l == 'undefined') || (l.toString().length == 0));
+            }
+            if (typeof l == 'undefined') return false;
+            switch (r) {
+                case 'numeric': return $.isNumeric(l); break;
+                case 'boolean': return (l.toString()=='true' || l.toString()=='false'); break;
+                case 'string': return (l.toString().length != 0); break;
+                case 'array': return Object.prototype.toString.call(l) === '[object Array]'; break;
+                default: return false;
+            }
+        }
+    };
+    if (!operators[operator]) {
+        throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
+    }
+    result = operators[operator](lvalue, rvalue);
+    if (result) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+    });
+    </script>
+
+   <script id="tabs-template" type="text/x-handlebars-template">
+    <div class="htmlish-tabs"{{#if params}} data-params="{{params}}"{{/if}}>
+    <ul class="labels">{{#each items}}
+    <li{{#compare @index ../current}} class="active"{{/compare}}><a href="#{{id}}">{{label}}</a></li>
+    {{/each}}</ul>
+    <div class="bodies">{{#each items}}
+    <div id="{{id}}"{{#compare @index ../current}} class="active"{{/compare}}>
+    {{{content}}}
+    </div>
+    {{/each}}</div>
+    </div>
+    </script>
+
+    <script id="accordion-template" type="text/x-handlebars-template">
+    <div class="htmlish-accordion"{{#if params}} data-params="{{params}}"{{/if}}>
+    {{#each items}}<h3{{#compare @index ../current}} class="active"{{/compare}}><a href="#{{id}}">{{label}}</a></h3>
+    <div id="{{id}}"{{#compare @index ../current}} class="active"{{/compare}}>{{{content}}}</div>{{/each}}
+    </div>
+    </script>
+
+    <script id="columns-template" type="text/x-handlebars-template">
+    <div class="htmlish-columns grid">
+    {{#each items}}  <div class="{{class}}">{{{content}}}</div>
+    {{/each}}</div>
+    </script>
+
+   <script type="text/javascript">
+$(function () {
+
+    // just some initialisation, and precompilation of handlebars templates
+    var doc = document.querySelector("body"), nodes,
+        tmpl = $("#tabs-template").html(), tabs = Handlebars.compile(tmpl),
+        tmpl = $("#columns-template").html(), cols = Handlebars.compile(tmpl),
+        tmpl = $("#accordion-template").html(), acco = Handlebars.compile(tmpl);
+
+    // convert columns
+    nodes = doc.querySelectorAll("cols");
+    [].forEach.call(nodes, function(instance,j) {
+        var items = instance.children,
+            data = {"items":[]};
+        [].forEach.call(items, function(node,i,m) {
+            var obj = {};
+            obj["class"] = "col-" + (node.attributes.length ? [].map.call(node.attributes,function(o){return o.name}).join("") : "1-" + m.length);
+            obj["content"] = node.innerHTML.trim();
+            data.items.push(obj);
+        });
+        instance.outerHTML = cols(data);
+    });
+
+    // convert tabs
+    nodes = doc.querySelectorAll("tabs");
+    [].forEach.call(nodes, function(instance,j) {
+        var items = instance.children,  // querySelectorAll(":scope > *"),
+            data = {"items":[],"current":0};
+        [].forEach.call(items, function(node,i) {
+            var obj = {},
+                label = [node.localName.replace(/^nn/,"")];
+            [].forEach.call(node.attributes, function(o) { var n=o.name; if (n.lastIndexOf("*")==n.length-1) { data.current = i; n=n.substring(0,o.name.length-1); } label.push(n); });
+            obj["label"] = label.join(" ");
+            obj["id"] = "id_" + j + "_" + i + "_" + (new Date().getTime());
+            obj["content"] = node.innerHTML.trim();
+            data.items.push(obj);
+        });
+        if (instance.attributes && instance.attributes.length) {
+            data["params"] = [].map.call(instance.attributes,function(v){return v.name}).join(",");
+        }
+        instance.outerHTML = tabs(data);
+    });
+
+    // convert accordions
+    nodes = doc.querySelectorAll("accordion");
+    [].forEach.call(nodes, function(instance,j) {
+        var items = instance.children, // querySelectorAll(":scope > *"),
+            data = {"items":[],"current":0};
+        [].forEach.call(items, function(node,i) {
+            var obj = {},
+                label = [node.localName.replace(/^nn/,"")]; // <nn1> -> 1, since <1> isn't valid
+            [].forEach.call(node.attributes, function(o) { var n=o.name; if (n.lastIndexOf("*")==n.length-1) { data.current = i; n=n.substring(0,o.name.length-1); } label.push(n); });
+            obj["label"] = label.join(" ");
+            obj["id"] = "id_" + j + "_" + i + "_" + (new Date().getTime());
+            obj["content"] = node.innerHTML.trim();
+            data.items.push(obj);
+        });
+        if (instance.attributes && instance.attributes.length) {
+            data["params"] = [].map.call(instance.attributes,function(v){return v.name}).join(",");
+        }
+        instance.outerHTML = acco(data);
+    });
+
+    // bind tab click logic
+    $("div.htmlish-tabs").on("click","ul.labels>li>a",function(e) {
+        var $a=$(this);
+        $a.parent().addClass("active").siblings().removeClass("active");
+        $($a.attr("href")).addClass("active").siblings().removeClass("active");
+    });
+
+    // bind accordions click logic
+    $("div.htmlish-accordion").on("click","h3",function(e) {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(this).next("div").addClass("active");
+    });
+
+});
+
+    </script>
+    </body>
+</html>
