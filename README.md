@@ -16,4 +16,4 @@ Simplified markup for Columns, Tabs &amp; Accordions in HTML5(ish).
         </it's>
     </tabs>
 
-Did you know you could do this?
+Did you know you could do this? You can't. But with some javascript hackery, you can!
