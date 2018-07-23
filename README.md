@@ -1,8 +1,6 @@
 # html-ish
 Simplified markup for Columns, Tabs &amp; Accordions in HTML5(ish).
 
-[Demo](http://frumbert.org/demo/html-ish/index.html)
-
     <tabs>
         <hello there.>
             I'm a tab.
